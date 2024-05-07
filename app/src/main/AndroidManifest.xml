@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="co.fanavari.mycomposeapplication">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -10,9 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyComposeApplication">
         <activity
-            android:name=".MainActivity4"
+            android:name=".MainActivity3"
             android:exported="true"
-            android:label="@string/title_activity_main4"
+            android:label="@string/title_activity_main3"
             android:theme="@style/Theme.MyComposeApplication">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +23,9 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity3"
+            android:name=".MainActivity4"
             android:exported="false"
-            android:label="@string/title_activity_main3"
+            android:label="@string/title_activity_main4"
             android:theme="@style/Theme.MyComposeApplication">
 
             <meta-data

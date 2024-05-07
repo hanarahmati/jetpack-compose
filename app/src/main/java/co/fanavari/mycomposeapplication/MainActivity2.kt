@@ -62,7 +62,7 @@ class MainActivity2 : ComponentActivity() {
 
     @Destination
     @Composable
-    fun ProfileScreen(
+    fun ProfileScreen1(
         navigator: DestinationsNavigator,
         user: User
     ) {

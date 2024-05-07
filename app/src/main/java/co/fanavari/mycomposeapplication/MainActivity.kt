@@ -346,7 +346,7 @@ fun ForthPart(){
         }
         ColorBox(
             Modifier
-                .weight(1f)
+                .weight(0.5f)
                 .fillMaxSize()
         ){
             color.value = it
@@ -391,7 +391,8 @@ fun FifthPart() {
             Spacer(modifier = Modifier.height(16.dp))
             Button(onClick = {
                 scope.launch {
-                    scaffoldState.snackbarHostState.showSnackbar("$text $textFieldState")
+                    scaffoldState.snackbarHostState.
+                    showSnackbar("$text $textFieldState")
                 }
             }) {
                 Text("pls greet me")
@@ -485,11 +486,11 @@ fun SeventhPart(){
             top.linkTo(parent.top)
             start.linkTo(greenBox.end)
             end.linkTo(parent.end)
-           // width = Dimension.value(100.dp)
-            width = Dimension.fillToConstraints
+           width = Dimension.value(100.dp)
+            //width = Dimension.fillToConstraints
             height = Dimension.value(100.dp)
         }
-        createHorizontalChain(greenBox, redBox, chainStyle = ChainStyle.Spread)
+        createHorizontalChain(greenBox, redBox, chainStyle = ChainStyle.SpreadInside)
     }
     ConstraintLayout(constraints, modifier = Modifier.fillMaxSize()) {
         Box(modifier = Modifier
