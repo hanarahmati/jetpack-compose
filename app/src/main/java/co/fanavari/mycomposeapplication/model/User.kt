@@ -1,4 +1,4 @@
-package co.fanavari.mycomposeapplication
+package co.fanavari.mycomposeapplication.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
