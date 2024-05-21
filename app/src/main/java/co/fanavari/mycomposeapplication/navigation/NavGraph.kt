@@ -10,6 +10,7 @@ import androidx.navigation.navArgument
 import co.fanavari.mycomposeapplication.screens.LoginScreen
 import co.fanavari.mycomposeapplication.screens.PostScreen
 import co.fanavari.mycomposeapplication.screens.ProfileScreen
+import co.fanavari.mycomposeapplication.screens.TaskManagerScreen
 
 @Composable
 fun NavGraph(navController: NavHostController, modifier: Modifier = Modifier) {
@@ -52,6 +53,11 @@ fun NavGraph(navController: NavHostController, modifier: Modifier = Modifier) {
         ) {
             val showOnlyPostsByUser = it.arguments?.getBoolean("showOnlyPostsByUser") ?: false
             PostScreen(showOnlyPostsByUser)
+        }
+        composable(
+            "tasks"
+        ){
+            TaskManagerScreen(navController)
         }
     }
 }
