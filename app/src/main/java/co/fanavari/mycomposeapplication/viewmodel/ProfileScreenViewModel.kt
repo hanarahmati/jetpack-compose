@@ -8,6 +8,8 @@ class ProfileScreenViewModel(val initialSelected: Boolean = false) : ViewModel()
     private val items = listOf("Item 1", "Item 2", "Item 3", "Special Item")
     val filteredItems = mutableStateOf(items)
 
+    val showDialog = mutableStateOf(false)
+
     fun onSelectedChange() {
         selected.value = !selected.value
         filterItems()
@@ -19,5 +21,18 @@ class ProfileScreenViewModel(val initialSelected: Boolean = false) : ViewModel()
         } else {
             items
         }
+    }
+
+    fun onDialogShow() {
+        showDialog.value = true
+    }
+
+    fun onDialogDismiss() {
+        showDialog.value = false
+    }
+
+    fun onDialogConfirm() {
+        showDialog.value = false
+        // Handle additional confirmation logic if needed
     }
 }

@@ -23,6 +23,7 @@ import androidx.navigation.NavController
 import co.fanavari.mycomposeapplication.screens.components.FilterChipExample
 import co.fanavari.mycomposeapplication.viewmodel.ProfileScreenViewModel
 import co.fanavari.mycomposeapplication.model.User
+import co.fanavari.mycomposeapplication.screens.components.ConfirmationDialog
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -49,7 +50,7 @@ fun ProfileScreen(
         }
     }
 
-    var showDialog by remember { mutableStateOf(false) }
+    var showDialog by profileScreenViewModel.showDialog
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -71,41 +72,19 @@ fun ProfileScreen(
             Text(text = item)
         }
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = {showDialog = true}) {
-            Text(text = "Show Dialog")
+        Button(onClick = {profileScreenViewModel.onDialogShow()}) {
+            Text(text = "Show Dialog For Log Out")
             
         }
     }
     if (showDialog) {
         ConfirmationDialog(
             onConfirm = {
-                showDialog = false
+                profileScreenViewModel.onDialogConfirm()
                 navController.navigate("login")
             },
-            onDismiss = { showDialog = false }
+            onDismiss = { profileScreenViewModel.onDialogDismiss() }
         )
     }
 }
 
-@Composable
-fun ConfirmationDialog(onConfirm: () -> Unit, onDismiss: () -> Unit) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            Text(text = "Confirm Action")
-        },
-        text = {
-            Text("Are you sure you want to log out?")
-        },
-        confirmButton = {
-            Button(onClick = onConfirm) {
-                Text("Confirm")
-            }
-        },
-        dismissButton = {
-            Button(onClick = onDismiss) {
-                Text("Dismiss")
-            }
-        }
-    )
-}
