@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.fanavari.mycomposeapplication.model.Task
+import java.util.UUID
 
 @Composable
 fun AddTaskDialog(onAdd: (Task) -> Unit, onDismiss: () -> Unit) {
@@ -56,7 +57,8 @@ fun AddTaskDialog(onAdd: (Task) -> Unit, onDismiss: () -> Unit) {
         },
         confirmButton = {
             Button(onClick = {
-                onAdd(Task(taskName, taskPriority.toInt(), isImportant, false))
+                val id = UUID.randomUUID().toString()
+                onAdd(Task(id,taskName, taskPriority.toInt(), isImportant, false))
             }) {
                 Text("Add")
             }

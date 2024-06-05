@@ -11,9 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.fanavari.mycomposeapplication.model.Task
+import co.fanavari.mycomposeapplication.viewmodel.TaskManagerViewModel
 
 @Composable
-fun TaskItem(task: Task) {
+fun TaskItem(task: Task, viewModel: TaskManagerViewModel) {
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -27,13 +28,26 @@ fun TaskItem(task: Task) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text("Important")
-                Switch(checked = task.isImportant, onCheckedChange = null)
+                Switch(
+                    checked = task.isImportant,
+                    onCheckedChange = {
+                    viewModel.updateTask(task.copy(isImportant = it))
+                }
+                )
             }
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text("Completed")
-                Checkbox(checked = task.isCompleted, onCheckedChange = null)
+                Checkbox(
+                    checked = task.isCompleted,
+                    onCheckedChange = {
+                        viewModel.updateTask(task.copy(isCompleted = it))
+                    }
+                )
+            }
+            Button(onClick = { viewModel.deleteTask(task) }) {
+                Text("Delete")
             }
         }
     }
@@ -42,5 +56,8 @@ fun TaskItem(task: Task) {
 @Preview(showBackground = true)
 @Composable
 fun TaskItemPreview() {
-    TaskItem(task = Task(name = "Sample Task", priority = 3, isImportant = true, isCompleted = false))
+    val viewModel = TaskManagerViewModel()
+    TaskItem(task = Task(id = "1", name = "Sample Task",
+        priority = 3, isImportant = true, isCompleted = false)
+    , viewModel = viewModel)
 }

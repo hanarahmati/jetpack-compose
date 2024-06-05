@@ -20,4 +20,14 @@ class TaskManagerViewModel : ViewModel() {
     fun addTask(task: Task) {
         tasks.add(task)
     }
+
+    fun updateTask(updatedTask: Task) {
+        tasks.indexOfFirst { it.id == updatedTask.id }.takeIf { it != -1 }?.let { index ->
+            tasks[index] = updatedTask
+        }
+    }
+
+    fun deleteTask(task: Task) {
+        tasks.remove(task)
+    }
 }
