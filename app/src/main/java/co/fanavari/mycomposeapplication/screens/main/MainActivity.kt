@@ -1,4 +1,4 @@
-package co.fanavari.mycomposeapplication
+package co.fanavari.mycomposeapplication.screens.main
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -38,13 +38,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
+import co.fanavari.mycomposeapplication.R
 import co.fanavari.mycomposeapplication.ui.theme.MyComposeApplicationTheme
 import kotlinx.coroutines.launch
 import kotlin.random.Random

@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import co.fanavari.mycomposeapplication.ui.theme.MyComposeApplicationTheme
 import co.fanavari.mycomposeapplication.model.User
-import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import java.time.LocalDateTime
 
@@ -31,7 +30,6 @@ class MainActivity2 : ComponentActivity() {
         }
     }
 
-    @Destination(start = true)
     @Composable
     fun LoginScreen(
         navigator: DestinationsNavigator
@@ -60,7 +58,6 @@ class MainActivity2 : ComponentActivity() {
         }
     }
 
-    @Destination
     @Composable
     fun ProfileScreen1(
         navigator: DestinationsNavigator,
@@ -80,7 +77,6 @@ class MainActivity2 : ComponentActivity() {
         }
     }
 
-    @Destination
     @Composable
     fun PostScreen1(
         showOnlyPostsByUser: Boolean = false

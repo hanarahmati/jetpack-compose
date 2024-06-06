@@ -1,4 +1,4 @@
-package co.fanavari.mycomposeapplication
+package co.fanavari.mycomposeapplication.screens.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

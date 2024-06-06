@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.fanavari.mycomposeapplication.model.Task
-import co.fanavari.mycomposeapplication.viewmodel.TaskManagerViewModel
+import co.fanavari.mycomposeapplication.screens.taskManager.TaskManagerViewModel
 
 @Composable
 fun TaskItem(task: Task, viewModel: TaskManagerViewModel) {
@@ -53,6 +53,7 @@ fun TaskItem(task: Task, viewModel: TaskManagerViewModel) {
     }
 }
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun TaskItemPreview() {
@@ -60,4 +61,4 @@ fun TaskItemPreview() {
     TaskItem(task = Task(id = "1", name = "Sample Task",
         priority = 3, isImportant = true, isCompleted = false)
     , viewModel = viewModel)
-}
+}*/

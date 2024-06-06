@@ -4,7 +4,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import co.fanavari.mycomposeapplication.model.Task
-import co.fanavari.mycomposeapplication.viewmodel.TaskManagerViewModel
+import co.fanavari.mycomposeapplication.screens.taskManager.TaskManagerViewModel
 
 @Composable
 fun TaskList(tasks: List<Task>, viewModel: TaskManagerViewModel) {
@@ -15,6 +15,7 @@ fun TaskList(tasks: List<Task>, viewModel: TaskManagerViewModel) {
     }
 }
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun TaskListPreview() {
@@ -25,4 +26,4 @@ fun TaskListPreview() {
     )
     val viewModel = TaskManagerViewModel()
     TaskList(tasks = tasks, viewModel = viewModel)
-}
+}*/

@@ -1,4 +1,4 @@
-package co.fanavari.mycomposeapplication.screens
+package co.fanavari.mycomposeapplication.screens.taskManager
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,17 +14,17 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import co.fanavari.mycomposeapplication.screens.components.AddTaskDialog
 import co.fanavari.mycomposeapplication.screens.components.TaskList
-import co.fanavari.mycomposeapplication.viewmodel.TaskManagerViewModel
 
 @Composable
 fun TaskManagerScreen(
     navController: NavController,
-    taskManagerViewModel: TaskManagerViewModel = viewModel()
+    taskManagerViewModel: TaskManagerViewModel = hiltViewModel()
     ){
 
     val showDialog by taskManagerViewModel.showDialog

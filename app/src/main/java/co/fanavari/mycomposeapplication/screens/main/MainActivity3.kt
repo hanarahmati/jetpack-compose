@@ -1,4 +1,4 @@
-package co.fanavari.mycomposeapplication
+package co.fanavari.mycomposeapplication.screens.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,9 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import co.fanavari.mycomposeapplication.screens.ProfileScreen
+import co.fanavari.mycomposeapplication.screens.profile.ProfileScreen
 import co.fanavari.mycomposeapplication.ui.theme.MyComposeApplicationTheme
-import co.fanavari.mycomposeapplication.viewmodel.ProfileScreenViewModel
+import co.fanavari.mycomposeapplication.screens.profile.ProfileScreenViewModel
 
 class MainActivity3 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -151,7 +151,7 @@ fun ProfileScreen(
 }
 */
 
-@Preview(showBackground = true)
+/*@Preview(showBackground = true)
 @Composable
 fun ProfileScreenPreview() {
     // Provide default values for the arguments
@@ -162,7 +162,7 @@ fun ProfileScreenPreview() {
         created = 1656816000000L, // Example timestamp in milliseconds,
         ProfileScreenViewModel(initialSelected = true)
     )
-}
+}*/
 /*@Composable
 fun PostScreen(
     showOnlyPostsByUser: Boolean = false

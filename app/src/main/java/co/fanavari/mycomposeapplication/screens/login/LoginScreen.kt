@@ -1,4 +1,4 @@
-package co.fanavari.mycomposeapplication.screens
+package co.fanavari.mycomposeapplication.screens.login
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

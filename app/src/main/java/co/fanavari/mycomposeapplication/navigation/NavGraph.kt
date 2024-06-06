@@ -7,10 +7,10 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import co.fanavari.mycomposeapplication.screens.LoginScreen
-import co.fanavari.mycomposeapplication.screens.PostScreen
-import co.fanavari.mycomposeapplication.screens.ProfileScreen
-import co.fanavari.mycomposeapplication.screens.TaskManagerScreen
+import co.fanavari.mycomposeapplication.screens.login.LoginScreen
+import co.fanavari.mycomposeapplication.screens.post.PostScreen
+import co.fanavari.mycomposeapplication.screens.profile.ProfileScreen
+import co.fanavari.mycomposeapplication.screens.taskManager.TaskManagerScreen
 
 @Composable
 fun NavGraph(navController: NavHostController, modifier: Modifier = Modifier) {
