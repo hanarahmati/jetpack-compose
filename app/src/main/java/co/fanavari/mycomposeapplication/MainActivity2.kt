@@ -15,7 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import co.fanavari.mycomposeapplication.ui.theme.MyComposeApplicationTheme
-import co.fanavari.mycomposeapplication.model.User
+import co.fanavari.mycomposeapplication.data.model.User
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import java.time.LocalDateTime
 

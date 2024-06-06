@@ -11,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.*
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.*
-import co.fanavari.mycomposeapplication.model.MenuItem
+import co.fanavari.mycomposeapplication.data.model.MenuItem
 
 @Composable
 fun DrawerHeader() {

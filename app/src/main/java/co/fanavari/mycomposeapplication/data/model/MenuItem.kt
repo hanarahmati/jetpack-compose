@@ -1,4 +1,4 @@
-package co.fanavari.mycomposeapplication.model
+package co.fanavari.mycomposeapplication.data.model
 
 import androidx.compose.ui.graphics.vector.ImageVector
 

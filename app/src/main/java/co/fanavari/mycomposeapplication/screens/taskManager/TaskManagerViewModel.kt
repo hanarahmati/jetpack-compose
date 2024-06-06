@@ -4,16 +4,32 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import co.fanavari.mycomposeapplication.model.Task
+import androidx.lifecycle.viewModelScope
+import co.fanavari.mycomposeapplication.data.model.Task
+import co.fanavari.mycomposeapplication.data.repository.TaskRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class TaskManagerViewModel @Inject constructor(
-    private val savedStateHandle: SavedStateHandle
+    private val taskRepository: TaskRepository
 ) : ViewModel() {
-    val tasks = mutableStateListOf<Task>()
+
+    private val _tasks = MutableStateFlow<List<Task>>(emptyList())
+    val tasks: StateFlow<List<Task>> = _tasks.asStateFlow()
+
     val showDialog = mutableStateOf(false)
+    init {
+        viewModelScope.launch {
+            taskRepository.getAllTasks().collect { tasksList ->
+                _tasks.value = tasksList
+            }
+        }
+    }
 
     fun onDialogShow() {
         showDialog.value = true
@@ -24,16 +40,20 @@ class TaskManagerViewModel @Inject constructor(
     }
 
     fun addTask(task: Task) {
-        tasks.add(task)
+        viewModelScope.launch {
+            taskRepository.insertTask(task)
+        }
     }
 
-    fun updateTask(updatedTask: Task) {
-        tasks.indexOfFirst { it.id == updatedTask.id }.takeIf { it != -1 }?.let { index ->
-            tasks[index] = updatedTask
+    fun updateTask(task: Task) {
+        viewModelScope.launch {
+            taskRepository.updateTask(task)
         }
     }
 
     fun deleteTask(task: Task) {
-        tasks.remove(task)
+        viewModelScope.launch {
+            taskRepository.deleteTask(task)
+        }
     }
 }

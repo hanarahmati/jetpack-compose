@@ -13,7 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import co.fanavari.mycomposeapplication.model.MenuItem
+import co.fanavari.mycomposeapplication.data.model.MenuItem
 import co.fanavari.mycomposeapplication.navigation.NavGraph
 import co.fanavari.mycomposeapplication.screens.components.AppBar
 import co.fanavari.mycomposeapplication.screens.components.DrawerBody

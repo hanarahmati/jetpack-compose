@@ -23,7 +23,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import co.fanavari.mycomposeapplication.model.User
+import co.fanavari.mycomposeapplication.data.model.User
 import co.fanavari.mycomposeapplication.screens.components.ConfirmationDialog
 import co.fanavari.mycomposeapplication.screens.components.FilterChipExample
 import java.time.Instant

@@ -19,7 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import co.fanavari.mycomposeapplication.model.Task
+import co.fanavari.mycomposeapplication.data.model.Task
 import java.util.UUID
 
 @Composable
