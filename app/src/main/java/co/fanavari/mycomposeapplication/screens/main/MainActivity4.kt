@@ -19,8 +19,10 @@ import co.fanavari.mycomposeapplication.screens.components.AppBar
 import co.fanavari.mycomposeapplication.screens.components.DrawerBody
 import co.fanavari.mycomposeapplication.screens.components.DrawerHeader
 import co.fanavari.mycomposeapplication.ui.theme.MyComposeApplicationTheme
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainActivity4 : ComponentActivity() {
     //    @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,6 +74,7 @@ class MainActivity4 : ComponentActivity() {
                                 }
                             )
                         }
+
 
                     },
                     content = {

@@ -10,6 +10,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,6 +29,7 @@ fun TaskManagerScreen(
     ){
 
     val showDialog by taskManagerViewModel.showDialog
+    val tasks by taskManagerViewModel.tasks.collectAsState()
 
     Scaffold(
         floatingActionButton = {
@@ -43,7 +45,7 @@ fun TaskManagerScreen(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                TaskList(tasks = taskManagerViewModel.tasks, viewModel = taskManagerViewModel)
+                TaskList(tasks = tasks, viewModel = taskManagerViewModel)
             }
 
             if (showDialog) {

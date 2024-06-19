@@ -2,19 +2,17 @@ package co.fanavari.mycomposeapplication.screens.components
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import co.fanavari.mycomposeapplication.data.model.Task
 import co.fanavari.mycomposeapplication.screens.taskManager.TaskManagerViewModel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.toList
+
 
 @Composable
-fun TaskList(tasks: StateFlow<List<Task>>, viewModel: TaskManagerViewModel) {
+fun TaskList(tasks: List<Task>, viewModel: TaskManagerViewModel) {
+
+
     LazyColumn {
-        items(tasks.value.size) { index ->
-            TaskItem(task = tasks.value[index], viewModel= viewModel)
+        items( tasks.size) { index ->
+            TaskItem(task = tasks[index], viewModel = viewModel)
         }
     }
 }
