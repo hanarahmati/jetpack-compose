@@ -10,8 +10,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import co.fanavari.mycomposeapplication.data.dao.TaskDao
 import co.fanavari.mycomposeapplication.data.model.Task
+import co.fanavari.mycomposeapplication.data.repository.TaskRepository
 import co.fanavari.mycomposeapplication.screens.taskManager.TaskManagerViewModel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 
 @Composable
 fun TaskItem(task: Task, viewModel: TaskManagerViewModel) {
@@ -53,12 +57,25 @@ fun TaskItem(task: Task, viewModel: TaskManagerViewModel) {
     }
 }
 
-/*
+
 @Preview(showBackground = true)
 @Composable
 fun TaskItemPreview() {
-    val viewModel = TaskManagerViewModel()
-    TaskItem(task = Task(id = "1", name = "Sample Task",
-        priority = 3, isImportant = true, isCompleted = false)
-    , viewModel = viewModel)
-}*/
+    val task = Task(
+        id = "1",
+        name = "Sample Task",
+        priority = 3,
+        isImportant = true,
+        isCompleted = false
+    )
+
+    // Create a dummy view model with no real functionality for preview purposes
+    val dummyViewModel = object : TaskManagerViewModel(TaskRepository(object : TaskDao {
+        override fun getAllTasks(): Flow<List<Task>> = flowOf(emptyList())
+        override suspend fun insertTask(task: Task) {}
+        override suspend fun updateTask(task: Task) {}
+        override suspend fun deleteTask(task: Task) {}
+    })) {}
+
+    TaskItem(task = task, viewModel = dummyViewModel)
+}
